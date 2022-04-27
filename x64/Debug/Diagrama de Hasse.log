@@ -1,0 +1,18 @@
+﻿  Start.cpp
+C:\Users\gabri\source\repos\Diagrama de Hasse\Diagrama de Hasse\cFix.h(77,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\gabri\source\repos\Diagrama de Hasse\Diagrama de Hasse\cFix.h(86,118): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gabri\source\repos\Diagrama de Hasse\Diagrama de Hasse\cFix.h(86,80): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gabri\source\repos\Diagrama de Hasse\Diagrama de Hasse\frmPrograma.h(262,15): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+  Start1.cpp
+C:\Users\gabri\source\repos\Diagrama de Hasse\Diagrama de Hasse\cFix.h(77,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\gabri\source\repos\Diagrama de Hasse\Diagrama de Hasse\cFix.h(86,118): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gabri\source\repos\Diagrama de Hasse\Diagrama de Hasse\cFix.h(86,80): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gabri\source\repos\Diagrama de Hasse\Diagrama de Hasse\frmPrograma.h(262,15): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+  frmPrograma.cpp
+C:\Users\gabri\source\repos\Diagrama de Hasse\Diagrama de Hasse\cFix.h(77,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\gabri\source\repos\Diagrama de Hasse\Diagrama de Hasse\cFix.h(86,118): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gabri\source\repos\Diagrama de Hasse\Diagrama de Hasse\cFix.h(86,80): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gabri\source\repos\Diagrama de Hasse\Diagrama de Hasse\frmPrograma.h(262,15): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+  Generating Code...
+  frmPrograma.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  Diagrama de Hasse.vcxproj -> C:\Users\gabri\source\repos\Diagrama de Hasse\x64\Debug\Diagrama de Hasse.exe

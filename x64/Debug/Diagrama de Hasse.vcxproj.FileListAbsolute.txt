@@ -1,0 +1,5 @@
+C:\Users\gabri\source\repos\Diagrama de Hasse\Diagrama de Hasse\x64\Debug\Diagrama de Hasse.vcxproj.AssemblyReference.cache
+C:\Users\gabri\source\repos\Diagrama de Hasse\Diagrama de Hasse\x64\Debug\Diagrama de Hasse.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\gabri\source\repos\Diagrama de Hasse\Diagrama de Hasse\x64\Debug\DiagramadeHasse.frmPrograma.resources
+C:\Users\gabri\source\repos\Diagrama de Hasse\Diagrama de Hasse\x64\Debug\DiagramadeHasse.Start1.resources
+C:\Users\gabri\source\repos\Diagrama de Hasse\Diagrama de Hasse\x64\Debug\Diagrama de Hasse.vcxproj.GenerateResource.cache
