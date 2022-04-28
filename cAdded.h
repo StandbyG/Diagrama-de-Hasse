@@ -32,6 +32,10 @@ public:
 		delete arregloNivel;
 		delete auxiliar;
 		delete CantidaNivel;
+		contador = 0;
+		MCD = 0;
+		Nivel = 0;
+		determinarNivel = 0;
 	}
 	void SET_Contador(int numero) {
 		for (int i = 0; i < numero; i++)

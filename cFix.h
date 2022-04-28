@@ -84,7 +84,7 @@ public:
 					calcular = GET_Quantitylevel(j);
 					auxx++;
 					g->DrawString("" + GET_NumeroConjunto(j), mifuente, Brushes::Red, (x / 2) - ((calcular - (auxx * 2) - 1) * 20), y);
-					g->FillEllipse(Brushes::DarkBlue, (x / 2) - ((calcular - (auxx * 2) - 1) * 20), y + 15, 10, 10);
+					g->FillEllipse(Brushes::Black, (x / 2) - ((calcular - (auxx * 2) - 1) * 20), y + 15, 10, 10);
 					Posx[j] = (x / 2) - ((calcular - (auxx * 2) - 1) * 20) + 5;
 					Posy[j] = yy;
 				}

@@ -115,6 +115,7 @@
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Start.cpp" />
     <ClCompile Include="Start1.cpp" />
+    <ClCompile Include="Start2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -132,6 +133,9 @@
     <ClInclude Include="Start1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Start2.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmPrograma.resx">
@@ -139,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Start1.resx">
       <DependentUpon>Start1.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Start2.resx">
+      <DependentUpon>Start2.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

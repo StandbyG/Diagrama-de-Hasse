@@ -17,14 +17,22 @@ namespace DiagramadeHasse {
 	/// </summary>
 	public ref class frmPrograma : public System::Windows::Forms::Form
 	{
+
 	public:
 		Graphics^ g;
 		BufferedGraphicsContext^ Buffer;
 		BufferedGraphics^ buffer;
 	private:
 		cFix* fix;
+
 	private: System::Windows::Forms::Timer^ timer1;
 	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::ListBox^ Reflexiva;
+	private: System::Windows::Forms::ListBox^ Antisimetrica;
+	private: System::Windows::Forms::ListBox^ Transitiva;
+	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::Label^ label7;
 		   cAdd* added;
 	public:
 		frmPrograma(void)
@@ -95,6 +103,12 @@ namespace DiagramadeHasse {
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->Reflexiva = (gcnew System::Windows::Forms::ListBox());
+			this->Antisimetrica = (gcnew System::Windows::Forms::ListBox());
+			this->Transitiva = (gcnew System::Windows::Forms::ListBox());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// btnHallar
@@ -229,11 +243,71 @@ namespace DiagramadeHasse {
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &frmPrograma::button1_Click);
 			// 
+			// Reflexiva
+			// 
+			this->Reflexiva->FormattingEnabled = true;
+			this->Reflexiva->ItemHeight = 16;
+			this->Reflexiva->Location = System::Drawing::Point(1208, 8);
+			this->Reflexiva->Name = L"Reflexiva";
+			this->Reflexiva->Size = System::Drawing::Size(361, 212);
+			this->Reflexiva->TabIndex = 12;
+			// 
+			// Antisimetrica
+			// 
+			this->Antisimetrica->FormattingEnabled = true;
+			this->Antisimetrica->ItemHeight = 16;
+			this->Antisimetrica->Location = System::Drawing::Point(1208, 230);
+			this->Antisimetrica->Name = L"Antisimetrica";
+			this->Antisimetrica->Size = System::Drawing::Size(361, 212);
+			this->Antisimetrica->TabIndex = 13;
+			// 
+			// Transitiva
+			// 
+			this->Transitiva->FormattingEnabled = true;
+			this->Transitiva->ItemHeight = 16;
+			this->Transitiva->Location = System::Drawing::Point(1208, 462);
+			this->Transitiva->Name = L"Transitiva";
+			this->Transitiva->Size = System::Drawing::Size(361, 196);
+			this->Transitiva->TabIndex = 14;
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Location = System::Drawing::Point(1136, 8);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(63, 16);
+			this->label5->TabIndex = 15;
+			this->label5->Text = L"Reflexiva";
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Location = System::Drawing::Point(1136, 211);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(83, 16);
+			this->label6->TabIndex = 16;
+			this->label6->Text = L"Antisimetrica";
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Location = System::Drawing::Point(1136, 445);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(66, 16);
+			this->label7->TabIndex = 17;
+			this->label7->Text = L"Transitiva";
+			// 
 			// frmPrograma
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1145, 640);
+			this->ClientSize = System::Drawing::Size(1633, 692);
+			this->Controls->Add(this->label7);
+			this->Controls->Add(this->label6);
+			this->Controls->Add(this->label5);
+			this->Controls->Add(this->Transitiva);
+			this->Controls->Add(this->Antisimetrica);
+			this->Controls->Add(this->Reflexiva);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
@@ -254,37 +328,12 @@ namespace DiagramadeHasse {
 
 		}
 #pragma endregion
-private: System::Void frmPrograma_Load(System::Object^ sender, System::EventArgs^ e) {
-	fix = new cFix;
-	added = new cAdd;
-}
-		private: System::Void btnHallar_Click(System::Object^ sender, System::EventArgs^ e) {
-			int number = Convert::ToInt64(txtnumber->Text);
-			added->SET_Contador(number);
-			added->CrearArregloConjunto(number);
-			added->SET_MCD(number);
-			added->CrearArregloMCD(number);
-			added->UsarAuxiliar();
-			added->AgregarNiveles();
-			added->ArregloCantidadNivel();
-			fix->Add(added, added->GET_Contador());
-
-			for (int i = 0; i < added->GET_Contador(); i++) {
-				listBox1->Items->Add(fix->GET_NumeroConjunto(i));
-			}
-
-			for (int i = 0; i < added->GET_Contador(); i++) {
-				for (int j = 0; j < added->GET_Contador(); j++) {
-					listBox2->Items->Add("(" + fix->GET_NumeroConjunto(i) + ", " + fix->GET_NumeroConjunto(j) + ")");
-				}
-			}
-			timer1->Enabled = true;
-		}
-	private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void frmPrograma_Load(System::Object^ sender, System::EventArgs^ e) {
+		fix = new cFix;
+		added = new cAdd;
 	}
-    private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-		int number = rand()%100;
-		txtnumber->Text = (rand()%100).ToString();
+	private: System::Void btnHallar_Click(System::Object^ sender, System::EventArgs^ e) {
+		int number = Convert::ToInt32(txtnumber->Text);
 		added->SET_Contador(number);
 		added->CrearArregloConjunto(number);
 		added->SET_MCD(number);
@@ -293,7 +342,6 @@ private: System::Void frmPrograma_Load(System::Object^ sender, System::EventArgs
 		added->AgregarNiveles();
 		added->ArregloCantidadNivel();
 		fix->Add(added, added->GET_Contador());
-		btnHallar->Visible = false;
 
 		for (int i = 0; i < added->GET_Contador(); i++) {
 			listBox1->Items->Add(fix->GET_NumeroConjunto(i));
@@ -302,24 +350,91 @@ private: System::Void frmPrograma_Load(System::Object^ sender, System::EventArgs
 		for (int i = 0; i < added->GET_Contador(); i++) {
 			for (int j = 0; j < added->GET_Contador(); j++) {
 				listBox2->Items->Add("(" + fix->GET_NumeroConjunto(i) + ", " + fix->GET_NumeroConjunto(j) + ")");
+				if (fix->GET_NumeroConjunto(i) == fix->GET_NumeroConjunto(j))
+				{
+
+					Reflexiva->Items->Add("(" + fix->GET_NumeroConjunto(i) + ", " + fix->GET_NumeroConjunto(j) + ")" );
+
+				}
+				if (fix->GET_NumeroConjunto(i) < fix->GET_NumeroConjunto(j) && fix->GET_NumeroConjunto(j) % fix->GET_NumeroConjunto(i) == 0)
+				{
+
+					Antisimetrica->Items->Add("(" + fix->GET_NumeroConjunto(i) + ", " + fix->GET_NumeroConjunto(j) + ")" );
+
+				}
+				for (int z = 0;z < added->GET_Contador();z++)
+					if (fix->GET_NumeroConjunto(j) % fix->GET_NumeroConjunto(i) == 0 && fix->GET_NumeroConjunto(z) % fix->GET_NumeroConjunto(j) == 0 && z != i && z != j)
+					{
+						Transitiva->Items->Add("(" + fix->GET_NumeroConjunto(i) + ", " + fix->GET_NumeroConjunto(j) + ")" + "||   (" + fix->GET_NumeroConjunto(i) + fix->GET_NumeroConjunto(z) + ")" + "//    " + fix->GET_NumeroConjunto(z) + "=" + "k*" + fix->GET_NumeroConjunto(i) );
+					}
 			}
 		}
 		timer1->Enabled = true;
-    }
-private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) {
-	buffer->Graphics->Clear(Color::LightBlue);
-	fix->Hasse(buffer->Graphics);
-	fix->Line(buffer->Graphics);
-	buffer->Render(g);
+	}
+	private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		txtnumber->Text = ((rand() % 100) + 1).ToString();
+		added->SET_Contador(Convert::ToInt32(txtnumber->Text));
+		added->CrearArregloConjunto(Convert::ToInt32(txtnumber->Text));
+		added->SET_MCD(Convert::ToInt32(txtnumber->Text));
+		added->CrearArregloMCD(Convert::ToInt32(txtnumber->Text));
+		added->UsarAuxiliar();
+		added->AgregarNiveles();
+		added->ArregloCantidadNivel();
+		fix->Add(added, added->GET_Contador());
 
-}
-private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-	Close();
-}
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	txtnumber->Clear();
-	listBox1->ClearSelected();
-	listBox2->ClearSelected();
-}
-};
+
+		for (int i = 0; i < added->GET_Contador(); i++) {
+			listBox1->Items->Add(fix->GET_NumeroConjunto(i));
+		}
+
+		for (int i = 0; i < added->GET_Contador(); i++) {
+			for (int j = 0; j < added->GET_Contador(); j++) {
+				listBox2->Items->Add("(" + fix->GET_NumeroConjunto(i) + ", " + fix->GET_NumeroConjunto(j) + ")" );
+				if (fix->GET_NumeroConjunto(i) == fix->GET_NumeroConjunto(j))
+				{
+
+					Reflexiva->Items->Add("(" + fix->GET_NumeroConjunto(i) + ", " + fix->GET_NumeroConjunto(j) + ")");
+
+				}
+				if (fix->GET_NumeroConjunto(i) < fix->GET_NumeroConjunto(j) && fix->GET_NumeroConjunto(j) % fix->GET_NumeroConjunto(i) == 0)
+				{
+
+					Antisimetrica->Items->Add("(" + fix->GET_NumeroConjunto(i) + ", " + fix->GET_NumeroConjunto(j) + ")");
+
+				}
+				for (int z = 0;z < added->GET_Contador();z++)
+					if (fix->GET_NumeroConjunto(j) % fix->GET_NumeroConjunto(i) == 0 && fix->GET_NumeroConjunto(z) % fix->GET_NumeroConjunto(j) == 0 && z != i && z != j)
+					{
+						Transitiva->Items->Add("(" + fix->GET_NumeroConjunto(i) + ", " + fix->GET_NumeroConjunto(j) + ")" + "||   (" + fix->GET_NumeroConjunto(i) + fix->GET_NumeroConjunto(z) + ")" + "//    " + fix->GET_NumeroConjunto(z) + "=" + "k*" + fix->GET_NumeroConjunto(i));
+					}
+			}
+		}
+		timer1->Enabled = true;
+	}
+	private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) {
+			buffer->Graphics->Clear(Color::WhiteSmoke);
+			fix->Hasse(buffer->Graphics);
+			fix->Line(buffer->Graphics);
+			buffer->Render(g);
+
+	}
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		Close();
+	}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		timer1->Enabled = false;
+		if (timer1->Enabled == false)
+		{
+			txtnumber->Clear();
+			listBox1->Items->Clear();
+			listBox2->Items->Clear();
+			Antisimetrica->Items->Clear();
+			Transitiva->Items->Clear();
+			Reflexiva->Items->Clear();
+			panel1->Invalidate();
+		}
+	};
+	};
 }
